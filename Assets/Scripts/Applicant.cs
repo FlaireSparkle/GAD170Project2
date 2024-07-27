@@ -2,38 +2,17 @@ using UnityEngine;
 
 public class Applicant : MonoBehaviour
 {
-    public bool isPirate = false;
+    public string myName;
+    public string myHobby;
+    public bool killSomeCrew;
+    public ApplicantOptions currentRandomStats;
     public void Start()
     {
-        
-            
+        currentRandomStats.SetApplicantStats();
+        myName = ((currentRandomStats.nameFirst) + " " + (currentRandomStats.nameLast));
+        myHobby = (currentRandomStats.hobby);
+        killSomeCrew = (currentRandomStats.isPirate);
     }
-   
-    /////this region makes some variables readable by other scripts///
-    //#region Other Scripts Call Information
-    ////allow different parts to be viewed by other scripts
-    //public string getFirstName()
-    //{
-    //    return firstName;
-    //}
-    //public char getLastName()
-    //{
-    //    return lastName;
-    //}
-    //public string getHobby()
-    //{
-    //    return hobby;
-    //}
-
-    //public void getApplicantStats()
-    //{
-    //    getFirstName();
-    //    getLastName();
-    //    getHobby();
-
-    //}
-
-    //#endregion
 
 
 }
