@@ -10,29 +10,29 @@ public class ApplicantOptions : MonoBehaviour
     public string nameFirst;
     public char nameLast;
     public string hobby;
-    //crewHobby array
+    //crewHobby array private
     public string[] crewHobby = new string[] { };
-    //pirateHobby array
+    //pirateHobby array private
     public string[] pirateHobby = new string[] { };
-    //firstName array
+    //firstName array private
     public string[] firstNames = new string[] { };
-    //lastNames array
+    //lastNames array private
     public char[] lastNames = new char[] { };
     #endregion
 
-    //***note*** they are private because it is required in the outline
+
 
 
 
 
     /////set the if the applicant is a pirate, what their first name is, what their last initial is and (dependant on if they are a pirate) what their hobby is///
-    private void SetApplicantStats()
+    public void Start() // SetApplicantStats()
     {
          #region Are they secretly a Pirate?
-        ////randomly set the isPirate bool between true and false
+        //randomly set the isPirate bool between true and false
         isPirate = false;
         int pirateNumber = (Random.Range(1, 4));
-        //Debug.Log("Pirate Number is " + pirateNumber);
+        Debug.Log("Pirate Number is " + pirateNumber + ".   if = 3 then yes Pirate");
        
         if (pirateNumber == 3)
         {
@@ -44,9 +44,27 @@ public class ApplicantOptions : MonoBehaviour
         }
         #endregion
 
-        #region What is their First Name?
+        #region Set their First Name
         ////randomly select a name from the first names array and set the first name to it
-
+        nameFirst = (firstNames[Random.Range(0, (firstNames.Length-1))]);
+        Debug.Log("Applicants first name is " + nameFirst);
+        #endregion
+        #region Set their Last initial
+        ////randomly select a name from the first names array and set the first name to it
+        nameLast = (lastNames[Random.Range(0, (lastNames.Length - 1))]);
+        Debug.Log("Applicants last name initial is " + nameLast);
+        #endregion
+        #region Randomly Set their Hobby
+        ////randomly select a name from the first names array and set the first name to it
+        if (isPirate==false)
+        {
+            hobby = (crewHobby[Random.Range(0, (crewHobby.Length - 1))]);
+        }
+        else if (isPirate == true)
+        {
+            hobby = (pirateHobby[Random.Range(0, (pirateHobby.Length - 1))]);
+        }
+        Debug.Log("Applicants hobby is " + hobby);
         #endregion
         //randomly select a name from the first names array and set the last name to it
         //if the applicant is a pirate (isPirate bool == true) choose a hobby from the pirate Hobby array and set “hobby” to it

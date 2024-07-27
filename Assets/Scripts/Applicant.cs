@@ -5,18 +5,7 @@ public class Applicant : MonoBehaviour
     public bool isPirate = false;
     public void Start()
     {
-        isPirate = false;
-        int pirateNumber = (Random.Range(1, 4));
-        Debug.Log("Pirate Number is " + pirateNumber);
-        //randomly set the isPirate bool between true and false
-        if(pirateNumber==3)
-        {
-            isPirate = true;
-        }
-        else
-        {
-            isPirate=false;
-        }
+        
             
     }
    
