@@ -1546,12 +1546,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1221177097985941243, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221177097985941243, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221177097985941243, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1221177097985941243, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 960
+      value: 754
       objectReference: {fileID: 0}
     - target: {fileID: 1221177097985941243, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 540
+      value: 569
       objectReference: {fileID: 0}
     - target: {fileID: 1221177097985941243, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1585,6 +1597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1221177097985941243, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3314965270331668364, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
       propertyPath: m_Name
       value: ApplicantCapsule
@@ -1606,8 +1622,8 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 2036732878}
   - {fileID: 431771509}
-  - {fileID: 507389381}
   - {fileID: 382844933}
   - {fileID: 1297460735}
   - {fileID: 1927453353086895920}
   - {fileID: 4897926024024712906}
+  - {fileID: 507389381}

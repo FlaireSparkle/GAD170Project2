@@ -16,6 +16,13 @@ public class UiText : MonoBehaviour
     {
         
     }
+    
+    //public Void SetButtonsForHireing()
+    //{
+    ////set button's text.
+        //buttonAText = "disgard";
+        //buttonBText = "Hire";
+    //}
 
     // Update is called once per frame
     void Update()
