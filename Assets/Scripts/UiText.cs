@@ -10,17 +10,19 @@ public class UiText : MonoBehaviour
     public TextMeshProUGUI hobbyBubble;
     public TextMeshProUGUI buttonAText;
     public TextMeshProUGUI buttonBText;
+    public TextMeshProUGUI buttonCText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //set all button Text
+       
     }
     
-    //public Void SetButtonsForHireing()
+    //public Void SetButtonsForHireing() // or should this just be in start?? 
     //{
     ////set button's text.
-        //buttonAText = "disgard";
+        //buttonAText = "disgard/trash";
         //buttonBText = "Hire";
     //}
 
