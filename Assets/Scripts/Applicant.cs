@@ -2,17 +2,35 @@ using UnityEngine;
 
 public class Applicant : MonoBehaviour
 {
-    public string myName;
-    public string myHobby;
-    public bool killSomeCrew;
-    public ApplicantOptions currentRandomStats;
-    public void Start()
+    private string myName;
+    private string myHobby;
+    private bool isPirate;
+    public bool isCrew = false;
+    //Make Randomizer script Viewable
+    public Randomizer randomizeStats;
+
+    public void StatCreation()
     {
-        currentRandomStats.SetApplicantStats();
-        myName = ((currentRandomStats.nameFirst) + " " + (currentRandomStats.nameLast));
-        myHobby = (currentRandomStats.hobby);
-        killSomeCrew = (currentRandomStats.isPirate);
+        //double down on not being part of the crew yet
+        isCrew = false;
+        //roll the dice (set the stats in Randomizer script)
+        randomizeStats.SetApplicantStats();
+        //copy the stats over
+        myName = ((randomizeStats.nameFirst) + " " + (randomizeStats.nameLast));
+        myHobby = (randomizeStats.hobby);
+        isPirate = (randomizeStats.isPirate);
     }
 
-
+    public string GetName
+    {
+        get
+        { return myName; }
+        set{}
+    }
+    public string GetHobby
+    {
+        get
+        { return myHobby; }
+        set { }
+    }
 }
