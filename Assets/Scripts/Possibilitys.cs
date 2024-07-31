@@ -4,10 +4,10 @@ using UnityEngine;
 
 /// <summary>
 /// there should only be one instance of this script. 
-/// Applicant Randomizer is the script that holds all the possible names and information 
+/// Applicant Possibilitys is the script that holds all the possible names and information 
 /// this information will be randomized (triggered by the applicant) that will be copied into the applicant script when the crew applicant prefab comes into being.
 /// </summary>
-public class Randomizer : MonoBehaviour
+public class Possibilitys : MonoBehaviour
 {
   //bring into existence the variables this script will need
     #region Variables

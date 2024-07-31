@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TheShip : MonoBehaviour
+public class TheCrew : MonoBehaviour
 {
 
 

@@ -6,14 +6,14 @@ public class Applicant : MonoBehaviour
     private string myHobby;
     private bool isPirate;
     public bool isCrew = false;
-    //Make Randomizer script Viewable
-    public Randomizer randomizeStats;
+    //Make Possibilitys script Viewable
+    public Possibilitys randomizeStats;
 
     public void StatCreation()
     {
         //double down on not being part of the crew yet
         isCrew = false;
-        //roll the dice (set the stats in Randomizer script)
+        //roll the dice (set the stats in Possibilitys script)
         randomizeStats.SetApplicantStats();
         //copy the stats over
         myName = ((randomizeStats.nameFirst) + " " + (randomizeStats.nameLast));

@@ -8,9 +8,10 @@ public class UiText : MonoBehaviour
     public TextMeshProUGUI textBubble;
     public TextMeshProUGUI nameBubble;
     public TextMeshProUGUI hobbyBubble;
-    public TextMeshProUGUI buttonAText;
-    public TextMeshProUGUI buttonBText;
-    public TextMeshProUGUI buttonCText;
+     
+    //public TextMeshProUGUI buttonDisgard;
+    //public TextMeshProUGUI buttonHire;
+    //public TextMeshProUGUI buttonContinue;
 
     // Start is called before the first frame update
     void Start()
