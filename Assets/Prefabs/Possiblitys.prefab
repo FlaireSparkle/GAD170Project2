@@ -41,56 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3996378314372919334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 321e6f77732ea1640a18293104e0c95b, type: 3}
+  m_Script: {fileID: 11500000, guid: 96e3fec376c1e104bbc44b275845e44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPirate: 0
   nameFirst: 
-  nameLast: 484
+  nameLast: 48
   hobby: 
-  crewHobby:
-  - Singing
-  - Gambling
-  - Stargazeing
-  - Reading
-  - Video Games
-  - Magical Studies
-  - Swordplay
-  - Archery
-  pirateHobby:
-  - Hobbying
-  - Gamblin
-  - Starrgazein
-  - Napping
-  - Tinkering
-  - Spelling
-  - Sword Swinging
-  - Shooting
-  firstNames:
-  - Antony
-  - Benjimin
-  - Chene
-  - David
-  - Edward
-  - Fredrick
-  - Genevire
-  - Henry
-  - Issac
-  - Jack
-  - Kiki
-  - Lisa
-  - Mustard
-  - Nicolas
-  - Orvee
-  - Pete
-  - Quincee
-  - Ryder
-  - Sonya
-  - Tiffany
-  - Ussop
-  - Vincent
-  - William
-  - Xena
-  - Yousef
-  - Zendaya
-  lastNames: 4100420043004400450046004700480049004a004b004c004d004e004f0050005100520053005400550056005700580059005a00
+  crewHobby: []
+  pirateHobby: []
+  firstNames: []
+  lastNames: 

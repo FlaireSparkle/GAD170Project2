@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class Applicant : MonoBehaviour
 {
-    private string myName;
-    private string myHobby;
-    private bool isPirate;
+    private string myName = "unknown";
+    private string myHobby = "unknown";
+    private bool isPirate = false;
     public bool isCrew = false;
     //Make Possibilitys script Viewable
-    public Possibilitys randomizeStats;
+    public Possibilitys currentPossibilitys;
 
-    public void StatCreation()
+    public void start()//StatCreation()
     {
         //double down on not being part of the crew yet
         isCrew = false;
         //roll the dice (set the stats in Possibilitys script)
-        randomizeStats.SetApplicantStats();
+        currentPossibilitys.SetApplicantStats();
         //copy the stats over
-        myName = ((randomizeStats.nameFirst) + " " + (randomizeStats.nameLast));
-        myHobby = (randomizeStats.hobby);
-        isPirate = (randomizeStats.isPirate);
+        myName = ((currentPossibilitys.nameFirst) + " " + (currentPossibilitys.nameLast));
+        myHobby = (currentPossibilitys.hobby);
+        isPirate = (currentPossibilitys.isPirate);
     }
 
     public string GetName

@@ -4,7 +4,7 @@ public class Testing : MonoBehaviour
 {
     //set variables
     //gameObject using the applicantCapsualPrefab (drag this to the Script)
-    public GameObject applicantCapsulePrefab;
+    public GameObject currentApplicant;
 
 
     // Start is called before the first frame update
@@ -19,10 +19,11 @@ public class Testing : MonoBehaviour
     /// </summary>
     public void Update()
     {
-        //if Input.GetKeyDown(KeyCode.P);
-        //{
-        //    Debug.Log("The applicant's name is " + );//currentApplicant.GetName);
-        //}
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+           // currentApplicant.gameObject.StatCreation();
+            Debug.Log("The applicant's name is " + currentApplicant);
+        }
+
     }
 }

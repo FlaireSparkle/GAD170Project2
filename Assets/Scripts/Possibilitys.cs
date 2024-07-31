@@ -28,20 +28,22 @@ public class Possibilitys : MonoBehaviour
     public char[] lastNames = new char[] { };
     #endregion
 
-
-
-
-
-
     /////set the if the applicant is a pirate, what their first name is, what their last initial is and (dependant on if they are a pirate) what their hobby is///
+    public void start()
+    {
+        //set array text //firstnamearray()//lastnamearray()//piratehobbyarray()//crewhobbyarray()
+
+        firstNames = new string[] { "apple", "bottom", "Jeans" };
+
+    }
     public void SetApplicantStats()
     {
-         #region Are they secretly a Pirate?
+        #region Are they secretly a Pirate?
         //randomly set the isPirate bool between true and false
         isPirate = false;
         int pirateNumber = (Random.Range(1, 4));
         Debug.Log("Pirate Number is " + pirateNumber + ".   if = 3 then yes Pirate");
-       
+
         if (pirateNumber == 3)
         {
             isPirate = true;
@@ -54,7 +56,7 @@ public class Possibilitys : MonoBehaviour
 
         #region Set their First Name
         //randomly select a name from the first names array and set the first name to it
-        nameFirst = (firstNames[Random.Range(0, (firstNames.Length-1))]);
+        nameFirst = (firstNames[Random.Range(0, (firstNames.Length - 1))]);
         Debug.Log("Applicants first name is " + nameFirst);
         #endregion
         #region Set their Last initial
@@ -62,9 +64,10 @@ public class Possibilitys : MonoBehaviour
         nameLast = (lastNames[Random.Range(0, (lastNames.Length - 1))]);
         Debug.Log("Applicants last name initial is " + nameLast);
         #endregion
+
         #region Randomly Set their Hobby
         //if the applicant is NOT a pirate (isPirate bool == false) choose a hobby from the crew Hobby array and set “hobby” to it
-        if (isPirate==false)
+        if (isPirate == false)
         {
             hobby = (crewHobby[Random.Range(0, (crewHobby.Length - 1))]);
         }
@@ -75,10 +78,17 @@ public class Possibilitys : MonoBehaviour
         }
         Debug.Log("Applicants hobby is " + hobby);
         #endregion
-       
-        
-
     }
+    #region hard coded arrays
+    private void firstNameArray()
+    {
+        firstNames = new string[] {"apple", "bottom","Jeans"};
+        lastNames = new char[] { 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', };
+    }
+    //lastNameArray()
 
+    //pirateHobbyArray()
 
+    //crewHobbyArray()
+    #endregion
 }
