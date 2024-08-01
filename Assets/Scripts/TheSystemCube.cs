@@ -62,47 +62,48 @@ public class TheSystemCube : MonoBehaviour
 
         #region Hire the Applicant
 
-        if (decisionTime = true &&  (Input.GetKeyDown(KeyCode.H)))
+        if (decisionTime == true &&  (Input.GetKeyDown(KeyCode.H)))
         {
             decisionTime = false;
             if (currentApplicant.GetIsPirate == true)
             {
-               
                 pirateIncedentCount++;
-                //if isPirate true && null check list is 1 or more
-
-                // randomly select a number and change murderTime string to that number’s word from crewHobby list
-                murderTime = theCrew[Random.Range(0,(theCrew.Count - 1))].GetHobby;
-                //run for each loop that goes through the crewHobbys list in (uses a reducing list number for referencenumber) and DESTROYS all Applicant prefabs that have the hobby and remove them from the list (create a temp link)
-                    foreach (Applicant applicant in theCrew)
+                //null check list is 1 or more
+                if (theCrew.Count != null)
+                {
+                    // randomly select a number and change murderTime string to that number’s word from crewHobby list
+                    murderTime = theCrew[Random.Range(0, (theCrew.Count - 1))].GetHobby;
+                    //run for each loop that goes through the crewHobbys list in (uses a reducing list number for referencenumber) and DESTROYS all Applicant prefabs that have the hobby and remove them from the list (create a temp link)
+                    for (int i = theCrew.Count - 1; i >= 0; i--)
                     {
+                        Applicant applicant = theCrew[i];
                         //check if hobby = MurderTime
                         if (murderTime == (applicant.GetHobby))
                         {
                             //remove applicant from list
                             theCrew.Remove(applicant);
                             //destroy this applicant
-                            Destroy(applicant.gameObject); 
+                            Destroy(applicant.gameObject);
                         }
                     }
-                    
+                    //change text to read :You have Hired “currentapplicantsName”.  They have killed and looted all members in the “murderTime” group. You now need “(10 - current number of crewMembers)”
+                    Debug.Log("You have hired " + currentApplicant.GetName + ". They have killed and looted all members in the " + murderTime + " group. You now need " + (10 - theCrew.Count) + " crew members.");
+                    //rest murdertime string
+                    murderTime = "";
+                }
 
-
-                //change text to read :You have Hired “currentapplicantsName”.  They have killed and looted all members in the “murderTime” group. You now need “(10 - current number of crewMembers)”
-                Debug.Log("You have hired " + currentApplicant.GetName + ". They have killed and looted all members in the " + murderTime + " group. You now need " + (10 - theCrew.Count) + " crew members.");
-                //rest murdertime string
-                murderTime = "";
                 //}
-                //else If isPirate true && null check list is NOT 1 or more
+                //else (null check list is NOT 1 or more)
+                else
+                { 
+                    //change text to read :You have Hired “currentapplicantsName”. They realised there was nothing interesting to do and left your crew. You now need “(10 - current number of crewMembers)”
+                    Debug.Log("You have hired " + currentApplicant.GetName + ". They realised there was nothing interesting to do and left your crew. You now need " + (10 - theCrew.Count) + " crew members.");
+                }
                 
                 //destroy currentApplicant 
                 Destroy(currentApplicant.gameObject);
-
-                //run updateCrewCount()
-                
-                //change text to read :You have Hired “currentapplicantsName”. They realised there was nothing interesting to do and left your crew. You now need “(10 - current number of crewMembers)”
-                //Debug.Log("You have hired " + currentApplicant.GetName + ". They realised there was nothing interesting to do and left your crew. You now need " + (10 - theCrew.Count) + " crew members.");
-
+                spaceToContinue=true;
+                return;
             }
             else if (currentApplicant.GetIsPirate == false)
             {
@@ -118,21 +119,21 @@ public class TheSystemCube : MonoBehaviour
                    YouWin();
                    return;
                }
-
+                if ((theCrew.Count) < 10)
+                {
+                 RunNewApplicant();
+                 return;
+                }
             }
 
             
-           if ((theCrew.Count) < 10)
-           {
-                RunNewApplicant();
-                return;
-           }
+           
         }
         #endregion
 
         #region Disgard the Applicant
         //discard that application
-        if (decisionTime = true && (Input.GetKeyDown(KeyCode.D)))
+        if (decisionTime == true && (Input.GetKeyDown(KeyCode.D)))
         {
             decisionTime = false;
             Debug.Log("You have rejected " + currentApplicant.GetName + ".");
@@ -169,10 +170,11 @@ public class TheSystemCube : MonoBehaviour
         //show CurrentApplicant's name and hobby to player on the UI
 
         //tell the buttons they are useable by setting decision time bool = true
-        decisionTime = true;
+        
         Debug.Log("The applicant's name is " + currentApplicant.GetName);
         Debug.Log("Their favourite hobby is " + currentApplicant.GetHobby);
         totalApplicants ++;
+        decisionTime = true;
     }
     public void YouWin()
     {
