@@ -31,9 +31,8 @@ public class Possibilitys : MonoBehaviour
     /////set the if the applicant is a pirate, what their first name is, what their last initial is and (dependant on if they are a pirate) what their hobby is///
     public void start()
     {
-        //set array text //firstnamearray()//lastnamearray()//piratehobbyarray()//crewhobbyarray()
-
-        firstNames = new string[] { "apple", "bottom", "Jeans" };
+        ////set array text //firstnamearray()//lastnamearray()//piratehobbyarray()//crewhobbyarray()
+        //firstNames = new string[] { "apple", "bottom", "Jeans" };
 
     }
     public void SetApplicantStats()

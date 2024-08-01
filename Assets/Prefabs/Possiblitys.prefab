@@ -48,7 +48,49 @@ MonoBehaviour:
   nameFirst: 
   nameLast: 48
   hobby: 
-  crewHobby: []
-  pirateHobby: []
-  firstNames: []
-  lastNames: 
+  crewHobby:
+  - Singing
+  - Gambling
+  - Stargazeing
+  - Reading
+  - Video Games
+  - Magical Studies
+  - Swordplay
+  - Archery
+  pirateHobby:
+  - Hobbying
+  - Gamblin
+  - Starrgazein
+  - Napping
+  - Tinkering
+  - Spelling
+  - Sword Swinging
+  - Shooting
+  firstNames:
+  - Antony
+  - Benjimin
+  - Chene
+  - David
+  - Edward
+  - Fredrick
+  - Genevire
+  - Henry
+  - Issac
+  - Jack
+  - Kiki
+  - Lisa
+  - Mustard
+  - Nicolas
+  - Orvee
+  - Pete
+  - Quincee
+  - Ryder
+  - Sonya
+  - Tiffany
+  - Ussop
+  - Vincent
+  - William
+  - Xena
+  - Yousef
+  - Zendaya
+  lastNames: 4100420043004400450046004700480049004a004b004c004d004f004e0050005100520053005400550056005700580059005a00

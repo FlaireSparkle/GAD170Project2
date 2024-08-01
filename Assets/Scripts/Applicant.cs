@@ -9,7 +9,7 @@ public class Applicant : MonoBehaviour
     //Make Possibilitys script Viewable
     public Possibilitys currentPossibilitys;
 
-    public void start()//StatCreation()
+    public void StatCreation()
     {
         //double down on not being part of the crew yet
         isCrew = false;
