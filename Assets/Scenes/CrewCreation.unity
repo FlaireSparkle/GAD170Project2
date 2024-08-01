@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 129430443}
   - component: {fileID: 129430442}
   m_Layer: 5
-  m_Name: Name
+  m_Name: Name(TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 137940207}
   - component: {fileID: 137940206}
   m_Layer: 5
-  m_Name: Hobby
+  m_Name: Hobby(TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 326151257}
   - component: {fileID: 326151256}
   m_Layer: 0
-  m_Name: TheTestingCube
+  m_Name: TheSystemCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,9 +423,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3657150b7e7f9884492a349809ce2f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalApplicants: 0
+  piratesAvoidedCount: 0
+  pirateIncedentCount: 0
+  spaceToContinue: 0
+  decisionTime: 0
   applicantPrefab: {fileID: 3314965270331668364, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
   currentApplicant: {fileID: 0}
   allApplicants: []
+  theCrew: []
+  crewHobbys: []
 --- !u!65 &326151257
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class Applicant : MonoBehaviour
     public bool isCrew = false;
     //Make Possibilitys script Viewable
     public Possibilitys currentPossibilitys;
+    
 
     public void StatCreation()
     {
@@ -19,6 +20,7 @@ public class Applicant : MonoBehaviour
         myName = ((currentPossibilitys.nameFirst) + " " + (currentPossibilitys.nameLast));
         myHobby = (currentPossibilitys.hobby);
         isPirate = (currentPossibilitys.isPirate);
+        
     }
 
     public string GetName
@@ -31,6 +33,12 @@ public class Applicant : MonoBehaviour
     {
         get
         { return myHobby; }
+        set { }
+    }
+    public bool GetIsPirate
+    {
+        get
+        { return isPirate; }
         set { }
     }
 }
