@@ -32,4 +32,28 @@ public class UiText : MonoBehaviour
     {
         
     }
+    public void ActivateHireingModeUI(string applicantsName, string applicantsHobby)
+    {
+        //"will you hire" becomes visable
+        //nametmp = "Name: " + currentApplicant's Name & becomes visable
+        nameBubble.text = "Name:  " + applicantsName;
+        //hobbytmp = "Hobby: " + currentApplicant's Hobby & becomes visable
+        //D to Discard and H to Hire become visable
+    }
+    public void DeactivateHireingModeUI(string applicantsName, string applicantsHobby)
+    {
+        //"will you hire" becomes visable
+        //nametmp = "Name: " + currentApplicant's Name & becomes visable
+        
+        //hobbytmp = "Hobby: " + currentApplicant's Hobby & becomes visable
+        //D to Discard and H to Hire become visable
+    }
+    
+    //turns on the text bubble with the attached text set.
+    public void ActivateTextBubbleUI(int bubbleNumber)
+    { 
+        //sets text
+        //turns on visibility of text
+    
+    }
 }
