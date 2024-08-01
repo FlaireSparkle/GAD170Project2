@@ -20,11 +20,11 @@ public class TheSystemCube : MonoBehaviour
     public GameObject applicantPrefab;
     public Applicant currentApplicant;
     //lists that store crew & hobbys??
-    public List<Applicant> allApplicants = new List<Applicant> ();
     public List<Applicant> theCrew = new List<Applicant> { };
     public string[] crewHobbys = new string[] { };
     #endregion
 
+    public string murderTime = "";
     #endregion
 
     // Start is called before the first frame update
@@ -67,25 +67,41 @@ public class TheSystemCube : MonoBehaviour
             decisionTime = false;
             if (currentApplicant.GetIsPirate == true)
             {
-                Debug.Log("You have hired " + currentApplicant.GetName + ".");
+               
                 pirateIncedentCount++;
                 //if isPirate true && null check list is 1 or more
 
                 // randomly select a number and change murderTime string to that number’s word from crewHobby list
+                murderTime = theCrew[Random.Range(0,(theCrew.Count - 1))].GetHobby;
+                //run for each loop that goes through the crewHobbys list in (uses a reducing list number for referencenumber) and DESTROYS all Applicant prefabs that have the hobby and remove them from the list (create a temp link)
+                    foreach (Applicant applicant in theCrew)
+                    {
+                        //check if hobby = MurderTime
+                        if (murderTime == (applicant.GetHobby))
+                        {
+                            //remove applicant from list
+                            theCrew.Remove(applicant);
+                            //destroy this applicant
+                            Destroy(applicant.gameObject); 
+                        }
+                    }
+                    
 
-                //run for loop that goes through the crewHobbys list and DESTROYS all Applicant prefabs that have the hobby  (maybe add && isCrew = true so it 100% wont destroy the Possibilities.cs?)
-
-                //destroy currentApplicant 
-
-                //run updateCrewCount()
 
                 //change text to read :You have Hired “currentapplicantsName”.  They have killed and looted all members in the “murderTime” group. You now need “(10 - current number of crewMembers)”
-
+                Debug.Log("You have hired " + currentApplicant.GetName + ". They have killed and looted all members in the " + murderTime + " group. You now need " + (10 - theCrew.Count) + " crew members.");
+                //rest murdertime string
+                murderTime = "";
+                //}
                 //else If isPirate true && null check list is NOT 1 or more
+                
                 //destroy currentApplicant 
-                //run updateCrewCount()
-                //change text to read :You have Hired “currentapplicantsName”. They realised there was nothing interesting to do and left your crew. You now need “(10 - current number of crewMembers)”
+                Destroy(currentApplicant.gameObject);
 
+                //run updateCrewCount()
+                
+                //change text to read :You have Hired “currentapplicantsName”. They realised there was nothing interesting to do and left your crew. You now need “(10 - current number of crewMembers)”
+                //Debug.Log("You have hired " + currentApplicant.GetName + ". They realised there was nothing interesting to do and left your crew. You now need " + (10 - theCrew.Count) + " crew members.");
 
             }
             else if (currentApplicant.GetIsPirate == false)
@@ -94,13 +110,23 @@ public class TheSystemCube : MonoBehaviour
                 //add to theCrew (set is crew = true within the applicant's script)
                 currentApplicant.isCrew = true;
                 //add to the crew list
-                Applicant[] theCrew = FindObjectsOfType<Applicant>();
+                theCrew.Add(currentApplicant);
+               
                 //check if you have 10 crew if yes you win (if no continue)
-                
+               if ((theCrew.Count) >= 10)
+               {
+                   YouWin();
+                   return;
+               }
 
             }
-            RunNewApplicant();
-            return;
+
+            
+           if ((theCrew.Count) < 10)
+           {
+                RunNewApplicant();
+                return;
+           }
         }
         #endregion
 
@@ -140,7 +166,6 @@ public class TheSystemCube : MonoBehaviour
         currentApplicant.StatCreation();
         //Set connected object's name the same as in the script
         currentApplicant.name = currentApplicant.GetName;
-
         //show CurrentApplicant's name and hobby to player on the UI
 
         //tell the buttons they are useable by setting decision time bool = true
@@ -148,5 +173,9 @@ public class TheSystemCube : MonoBehaviour
         Debug.Log("The applicant's name is " + currentApplicant.GetName);
         Debug.Log("Their favourite hobby is " + currentApplicant.GetHobby);
         totalApplicants ++;
+    }
+    public void YouWin()
+    {
+        Debug.Log("Win conditions Met but code not written yet");
     }
 }

@@ -430,7 +430,6 @@ MonoBehaviour:
   decisionTime: 0
   applicantPrefab: {fileID: 3314965270331668364, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
   currentApplicant: {fileID: 0}
-  allApplicants: []
   theCrew: []
   crewHobbys: []
 --- !u!65 &326151257
@@ -512,7 +511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326151255}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1058.1561, y: 506.46802, z: 28.830162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -794,7 +793,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431771509}
-  - component: {fileID: 431771510}
   m_Layer: 0
   m_Name: TheShip
   m_TagString: Untagged
@@ -815,24 +813,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 748982190}
   - {fileID: 1088369080}
-  - {fileID: 507389381}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &431771510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431771508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71567fb895184ac4fb20ec2db573d7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentApplicantPrefab: {fileID: 3314965270331668364, guid: 85b5880d6abef2e44b51700259d02c1f, type: 3}
-  theCrew: {fileID: 0}
 --- !u!1 &507389377
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +916,7 @@ RectTransform:
   - {fileID: 2147262681}
   - {fileID: 693488835}
   - {fileID: 1527411360}
-  m_Father: {fileID: 431771509}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1295,7 +1279,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 431771509}
     m_Modifications:
     - target: {fileID: 148211509239990642, guid: 2538db86a35631748849366f4830cb6a, type: 3}
       propertyPath: crewHobby.Array.size
@@ -1327,11 +1311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6852751173825644790, guid: 2538db86a35631748849366f4830cb6a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 960
+      value: -1422
       objectReference: {fileID: 0}
     - target: {fileID: 6852751173825644790, guid: 2538db86a35631748849366f4830cb6a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 540
+      value: -29
       objectReference: {fileID: 0}
     - target: {fileID: 6852751173825644790, guid: 2538db86a35631748849366f4830cb6a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1343,15 +1327,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6852751173825644790, guid: 2538db86a35631748849366f4830cb6a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6852751173825644790, guid: 2538db86a35631748849366f4830cb6a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6852751173825644790, guid: 2538db86a35631748849366f4830cb6a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6852751173825644790, guid: 2538db86a35631748849366f4830cb6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1370,6 +1354,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2538db86a35631748849366f4830cb6a, type: 3}
+--- !u!4 &748982190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6852751173825644790, guid: 2538db86a35631748849366f4830cb6a, type: 3}
+  m_PrefabInstance: {fileID: 748982188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,10 +2403,10 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 326151260}
   - {fileID: 963194228}
   - {fileID: 705507995}
+  - {fileID: 507389381}
+  - {fileID: 1297460735}
   - {fileID: 431771509}
   - {fileID: 382844933}
-  - {fileID: 1297460735}
-  - {fileID: 748982188}
-  - {fileID: 326151260}
