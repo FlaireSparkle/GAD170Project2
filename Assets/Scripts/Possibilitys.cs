@@ -41,7 +41,7 @@ public class Possibilitys : MonoBehaviour
         //randomly set the isPirate bool between true and false
         isPirate = false;
         int pirateNumber = (Random.Range(1, 4));
-        Debug.Log("Pirate Number is " + pirateNumber + ".   if = 3 then yes Pirate");
+        //Debug.Log("Pirate Number is " + pirateNumber + ".   if = 3 then yes Pirate");
 
         if (pirateNumber == 3)
         {
@@ -56,12 +56,12 @@ public class Possibilitys : MonoBehaviour
         #region Set their First Name
         //randomly select a name from the first names array and set the first name to it
         nameFirst = (firstNames[Random.Range(0, (firstNames.Length - 1))]);
-        Debug.Log("Applicants first name is " + nameFirst);
+        //Debug.Log("Applicants first name is " + nameFirst);
         #endregion
         #region Set their Last initial
         //randomly select a name from the last names array and set the last name to it
         nameLast = (lastNames[Random.Range(0, (lastNames.Length - 1))]);
-        Debug.Log("Applicants last name initial is " + nameLast);
+        //Debug.Log("Applicants last name initial is " + nameLast);
         #endregion
 
         #region Randomly Set their Hobby
@@ -75,7 +75,7 @@ public class Possibilitys : MonoBehaviour
         {
             hobby = (pirateHobby[Random.Range(0, (pirateHobby.Length - 1))]);
         }
-        Debug.Log("Applicants hobby is " + hobby);
+        //Debug.Log("Applicants hobby is " + hobby);
         #endregion
     }
     #region hard coded arrays
