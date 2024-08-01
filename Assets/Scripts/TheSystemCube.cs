@@ -6,7 +6,7 @@ using UnityEngine;
 public class TheSystemCube : MonoBehaviour
 {
     #region variables
-
+    public UiText deskUI;
     public string murderTime = "";
     
     #region Player input
@@ -36,14 +36,6 @@ public class TheSystemCube : MonoBehaviour
     {
         //Run new game sequence.
         NewGame();
-        
-
-
-
-
-
-
-        Debug.Log("press space to continue");
     }
     /// <summary>
     /// public void contains Keys for testing 
@@ -52,6 +44,8 @@ public class TheSystemCube : MonoBehaviour
     {
         if ((playerPrompt == true) && (spaceToContinue == true))
         {
+            //connect space to continue UI function
+            deskUI.SpaceToContinue();
             Debug.Log("Press space bar to continue.");
             playerPrompt = false;
         }
@@ -79,7 +73,8 @@ public class TheSystemCube : MonoBehaviour
         #region Hire the Applicant
 
         if ((decisionTime == true) && (Input.GetKeyDown(KeyCode.H)) && (currentApplicant!=null))
-        {
+        { 
+            deskUI.DeactivateTextUI();
             decisionTime = false;
             //the applicant is a pirate
             if (currentApplicant.GetIsPirate == true)
@@ -154,15 +149,17 @@ public class TheSystemCube : MonoBehaviour
             //discard that application
             if ((decisionTime == true) && (Input.GetKeyDown(KeyCode.D)) && (currentApplicant != null))
         {
+            deskUI.DeactivateTextUI();
             decisionTime = false;
             Debug.Log("You have rejected " + currentApplicant.GetName + ".");
-            if (currentApplicant.GetIsPirate = true)
+            if (currentApplicant.GetIsPirate == true)
             { 
                 piratesAvoidedCount++;
             }
             //add current applicant to trashCan or destroy them?
             Destroy(currentApplicant.gameObject);
-            RunNewApplicant ();
+            RunNewApplicant();
+            return;
 
         }
         #endregion
@@ -186,7 +183,8 @@ public class TheSystemCube : MonoBehaviour
         decisionTime = false;
         //theCrew = ([]);
         if (theCrew.Count != null)
-        { 
+        {
+            deskUI.DeactivateTextUI();
             for (int i = theCrew.Count - 1; i >= 0; i--)
             {
                 Applicant applicant = theCrew[i];
@@ -222,10 +220,11 @@ public class TheSystemCube : MonoBehaviour
 
         //tell the buttons they are useable by setting decision time bool = true
         
- //ActivateHireingModeUI(currentApplicant.GetName);
+        
         Debug.Log("The applicant's name is " + currentApplicant.GetName);
         Debug.Log("Their favourite hobby is " + currentApplicant.GetHobby);
         totalApplicants ++;
+        deskUI.ActivateHireingModeUI(currentApplicant.GetName, currentApplicant.GetHobby);
         decisionTime = true;
         playerPrompt = true;
     }
