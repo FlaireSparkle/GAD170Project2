@@ -9,7 +9,10 @@ public class UiText : MonoBehaviour
     public TextMeshProUGUI nameBubble;
     public TextMeshProUGUI hobbyBubble;
     public TextMeshProUGUI playerPromptBubble;
+    public TheSystemCube TheSystemCube;
 
+    public TextMeshProUGUI scoreText;
+    public int timer = 0;
 
     //public TextMeshProUGUI buttonDisgard;
     //public TextMeshProUGUI buttonHire;
@@ -39,7 +42,8 @@ public class UiText : MonoBehaviour
 
         }
         #endregion
-        
+        timer++;
+        scoreText.text = "the time is " + timer;
     }
     public void SpaceToContinue()
     {
@@ -47,15 +51,15 @@ public class UiText : MonoBehaviour
         //Debug.Log("spacebar prompted");
     }
 
-    public void ActivateHireingModeUI(string applicantName, string applicantHobby)
+    public void ActivateHireingModeUI()
     {
         //string applicantsName = Applicant.GetName;
         //string applicantsHobby = Applicant.GetHobby;
         //"will you hire" becomes visable
         //nametmp = "Name: " + currentApplicant's Name & becomes visable
-        nameBubble.text = ("Name:  " + applicantName);
+        nameBubble.text = ("Name:  " + (TheSystemCube.currentApplicant.GetName));
         //hobbytmp = "Hobby: " + currentApplicant's Hobby & becomes visable
-        hobbyBubble.text = ("Hobby:  " + applicantHobby);
+        hobbyBubble.text = ("Hobby:  " + TheSystemCube.currentApplicant.GetHobby);
         //D to Discard and H to Hire become visable
         playerPromptBubble.text = ("D to Discard  or  H to Hire");
         
@@ -76,7 +80,13 @@ public class UiText : MonoBehaviour
     public void ActivateTextBubbleUI(int bubbleNumber)
     { 
         //sets text //turns on visibility of text
-       
-    
+       if (bubbleNumber == 1)
+        {
+            nameBubble.text = ("You are almost ready to set off on your next adventure, the only thing stopping you is your lack of crew. You have narrowed down the applicants to those who meet the job requirements.");
+            Debug.Log("You are the captian of a ship");
+            Debug.Log("You are almost ready to set off on your next adventure, the only thing stopping you is your lack of crew. You have narrowed down the applicants to those who meet the job requirements.");
+        }
+        
+
     }
 }

@@ -61,6 +61,7 @@ public class TheSystemCube : MonoBehaviour
         {
             //turn off continue button
             spaceToContinue = false;
+            deskUI.DeactivateTextUI();
             //make a new Applicant. 
             RunNewApplicant();
         }
@@ -199,9 +200,10 @@ public class TheSystemCube : MonoBehaviour
         piratesAvoidedCount = 0;
         pirateIncedentCount = 0;
         #endregion
+        deskUI.ActivateTextBubbleUI(1);
         //this includes instructions and goal on the main text.
-        Debug.Log("You are the captian of a ship");
-        Debug.Log("You are almost ready to set off on your next adventure, the only thing stopping you is your lack of crew. You have narrowed down the applicants to those who meet the job requirements.");
+        //Debug.Log("You are the captian of a ship");
+        //Debug.Log("You are almost ready to set off on your next adventure, the only thing stopping you is your lack of crew. You have narrowed down the applicants to those who meet the job requirements.");
         //turn on continue button.
         spaceToContinue = true;
         playerPrompt = true;
@@ -224,7 +226,7 @@ public class TheSystemCube : MonoBehaviour
         Debug.Log("The applicant's name is " + currentApplicant.GetName);
         Debug.Log("Their favourite hobby is " + currentApplicant.GetHobby);
         totalApplicants ++;
-        deskUI.ActivateHireingModeUI(currentApplicant.GetName, currentApplicant.GetHobby);
+        deskUI.ActivateHireingModeUI();
         decisionTime = true;
         playerPrompt = true;
     }
