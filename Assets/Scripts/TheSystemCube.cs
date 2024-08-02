@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+//using Unity.VisualScripting; //what dis?
 using UnityEngine;
 
 [System.Serializable]
@@ -220,14 +220,14 @@ public class TheSystemCube : MonoBehaviour
         //Set connected object's name the same as in the script
         currentApplicant.name = currentApplicant.GetName;
         //show CurrentApplicant's name and hobby to player on the UI
-
+        deskUI.ActivateHireingModeUI(currentApplicant.GetName, currentApplicant.GetHobby);
         //tell the buttons they are useable by setting decision time bool = true
         
         
         Debug.Log("The applicant's name is " + currentApplicant.GetName);
         Debug.Log("Their favourite hobby is " + currentApplicant.GetHobby);
         totalApplicants ++;
-        deskUI.ActivateHireingModeUI(currentApplicant.GetName, currentApplicant.GetHobby);
+      
         decisionTime = true;
         playerPrompt = true;
     }

@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 using TMPro; //adds textmesh pro engine
 
@@ -12,7 +12,11 @@ public class UiText : MonoBehaviour
     public TheSystemCube TheSystemCube;
 
     public TextMeshProUGUI scoreText;
-    public int timer = 0;
+    //extra text for fun
+    public TMP_Text statsText;
+    public string workplaceIncedents;
+    public string piratesAvoided;
+    public string crewHired;
 
     //public TextMeshProUGUI buttonDisgard;
     //public TextMeshProUGUI buttonHire;
@@ -44,6 +48,10 @@ public class UiText : MonoBehaviour
         #endregion
         //timer++;
         //scoreText.text = "the time is " + timer;
+    workplaceIncedents = "Workplace incedents" + TheSystemCube.pirateIncedentCount;
+    piratesAvoided = "Pirates avoided: " + TheSystemCube.piratesAvoidedCount;
+    crewHired = "Crew Count: " + TheSystemCube.theCrew.Count;
+    statsText = (workplaceIncedents +" "+ piratesAvoided +" "+ crewHired);
     }
     public void SpaceToContinue()
     {
