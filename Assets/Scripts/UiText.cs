@@ -5,10 +5,10 @@ using TMPro; //adds textmesh pro engine
 
 public class UiText : MonoBehaviour
 {
-    public TextMeshProUGUI textBubble;
-    public TextMeshProUGUI nameBubble;
-    public TextMeshProUGUI hobbyBubble;
-    public TextMeshProUGUI playerPromptBubble;
+    public TMP_Text textBubble;
+    public TMP_Text nameBubble;
+    public TMP_Text hobbyBubble;
+    public TMP_Text playerPromptBubble;
     public TheSystemCube TheSystemCube;
 
     public TextMeshProUGUI scoreText;
@@ -42,8 +42,8 @@ public class UiText : MonoBehaviour
 
         }
         #endregion
-        timer++;
-        scoreText.text = "the time is " + timer;
+        //timer++;
+        //scoreText.text = "the time is " + timer;
     }
     public void SpaceToContinue()
     {
@@ -51,15 +51,15 @@ public class UiText : MonoBehaviour
         //Debug.Log("spacebar prompted");
     }
 
-    public void ActivateHireingModeUI()
+    public void ActivateHireingModeUI(string name, string hobby)
     {
         //string applicantsName = Applicant.GetName;
         //string applicantsHobby = Applicant.GetHobby;
         //"will you hire" becomes visable
         //nametmp = "Name: " + currentApplicant's Name & becomes visable
-        nameBubble.text = ("Name:  " + (TheSystemCube.currentApplicant.GetName));
+        nameBubble.text = ("Name:  " + name);
         //hobbytmp = "Hobby: " + currentApplicant's Hobby & becomes visable
-        hobbyBubble.text = ("Hobby:  " + TheSystemCube.currentApplicant.GetHobby);
+        hobbyBubble.text = ("Hobby:  " + hobby);
         //D to Discard and H to Hire become visable
         playerPromptBubble.text = ("D to Discard  or  H to Hire");
         
@@ -77,16 +77,11 @@ public class UiText : MonoBehaviour
     }
     
     //turns on the text bubble with the attached text set.
-    public void ActivateTextBubbleUI(int bubbleNumber)
+    public void ActivateTextBubbleUI(string theText)
     { 
-        //sets text //turns on visibility of text
-       if (bubbleNumber == 1)
-        {
-            nameBubble.text = ("You are almost ready to set off on your next adventure, the only thing stopping you is your lack of crew. You have narrowed down the applicants to those who meet the job requirements.");
-            Debug.Log("You are the captian of a ship");
-            Debug.Log("You are almost ready to set off on your next adventure, the only thing stopping you is your lack of crew. You have narrowed down the applicants to those who meet the job requirements.");
-        }
-        
+        textBubble.text = theText;
+        //SpaceToContinue();
+        Debug.Log(theText);
 
     }
 }

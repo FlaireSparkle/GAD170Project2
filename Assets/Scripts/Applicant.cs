@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class Applicant : MonoBehaviour
 {
     private string myName = "unknown";

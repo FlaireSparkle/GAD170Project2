@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[System.Serializable]
 public class TheSystemCube : MonoBehaviour
 {
     #region variables
@@ -200,7 +201,7 @@ public class TheSystemCube : MonoBehaviour
         piratesAvoidedCount = 0;
         pirateIncedentCount = 0;
         #endregion
-        deskUI.ActivateTextBubbleUI(1);
+        deskUI.ActivateTextBubbleUI("You are almost ready to set off on your next adventure, the only thing stopping you is your lack of crew. You have narrowed down the applicants to those who meet the job requirements.\"");
         //this includes instructions and goal on the main text.
         //Debug.Log("You are the captian of a ship");
         //Debug.Log("You are almost ready to set off on your next adventure, the only thing stopping you is your lack of crew. You have narrowed down the applicants to those who meet the job requirements.");
@@ -226,7 +227,7 @@ public class TheSystemCube : MonoBehaviour
         Debug.Log("The applicant's name is " + currentApplicant.GetName);
         Debug.Log("Their favourite hobby is " + currentApplicant.GetHobby);
         totalApplicants ++;
-        deskUI.ActivateHireingModeUI();
+        deskUI.ActivateHireingModeUI(currentApplicant.GetName, currentApplicant.GetHobby);
         decisionTime = true;
         playerPrompt = true;
     }
