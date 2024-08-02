@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class TheSystemCube : MonoBehaviour
+public class TheShip : MonoBehaviour
 {
     #region variables
     public UiText deskUI;
@@ -166,10 +166,10 @@ public class TheSystemCube : MonoBehaviour
         }
         #endregion
 
-        #region Testing Key
+        #region New Game Key P
         if (Input.GetKeyDown(KeyCode.P))
         {
-            
+            NewGame();
             
         }
         #endregion
@@ -197,6 +197,7 @@ public class TheSystemCube : MonoBehaviour
             
             }
         }
+        if (currentApplicant){ Destroy(currentApplicant.gameObject); }
         totalApplicants = 0;
         piratesAvoidedCount = 0;
         pirateIncedentCount = 0;

@@ -9,14 +9,10 @@ public class UiText : MonoBehaviour
     public TMP_Text nameBubble;
     public TMP_Text hobbyBubble;
     public TMP_Text playerPromptBubble;
-    public TheSystemCube TheSystemCube;
+    public TheShip TheSystemCube;
 
     public TextMeshProUGUI scoreText;
-    //extra text for fun
-    public TMP_Text statsText;
-    public string workplaceIncedents;
-    public string piratesAvoided;
-    public string crewHired;
+ 
 
     //public TextMeshProUGUI buttonDisgard;
     //public TextMeshProUGUI buttonHire;
@@ -48,10 +44,7 @@ public class UiText : MonoBehaviour
         #endregion
         //timer++;
         //scoreText.text = "the time is " + timer;
-    workplaceIncedents = "Workplace incedents" + TheSystemCube.pirateIncedentCount;
-    piratesAvoided = "Pirates avoided: " + TheSystemCube.piratesAvoidedCount;
-    crewHired = "Crew Count: " + TheSystemCube.theCrew.Count;
-    statsText = (workplaceIncedents +" "+ piratesAvoided +" "+ crewHired);
+    
     }
     public void SpaceToContinue()
     {
