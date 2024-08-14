@@ -1,6 +1,7 @@
 //using System.Collections;
 //using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro; //adds textmesh pro engine
 
 public class UiText : MonoBehaviour
@@ -69,10 +70,10 @@ public class UiText : MonoBehaviour
     {
         //"will you hire" becomes invisable
         //nametmp becomes invisable
-        nameBubble.text = " ";
-        hobbyBubble.text = " ";
-        playerPromptBubble.text = " ";
-        textBubble.text = " ";
+        nameBubble.text = "";
+        hobbyBubble.text = "";
+        playerPromptBubble.text = "";
+        textBubble.text = "";
         //hobbytmp becomes invisable
         //D to Discard and H to Hire becomes invisable
     }
